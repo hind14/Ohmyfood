@@ -7,7 +7,237 @@
 
 * {
   text-decoration: none;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body header img {
+  height: 30px;
+  padding: 20px 0 5px 0;
+}
+
+body header #location {
+  background-color: #eaeae1;
+  padding: 15px;
+}
+
+body header #reservation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f5ef;
+  padding: 30px 5px 50px 5px;
+  font-size: 17px;
+}
+
+body header h1 {
+  font-size: 24px;
+}
+
+body header #explore {
+  padding: 17px;
+  width: 200px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 30px;
+  color: white;
+  -webkit-box-shadow: 0 0 5px 0 gray;
+          box-shadow: 0 0 5px 0 gray;
+}
+
+body #fonction {
+  margin-bottom: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #fonction h2 {
+  padding: 20px 0 10px 20px;
+}
+
+body #fonction .choices {
+  position: relative;
+  padding: 25px;
+  margin: 15px;
+  width: 280px;
+  background-color: #f5f5ef;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 5px 4px #eaeae1;
+          box-shadow: 1px 1px 5px 4px #eaeae1;
+}
+
+body #fonction .icon {
+  color: gray;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+body #fonction .numbers {
+  position: absolute;
+  left: -20px;
+  bottom: 15px;
+  background-color: #9356DC;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin: 5px;
+  color: white;
+}
+
+body #restaurant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f5f5ef;
+  padding: 20px 0 50px 0;
+}
+
+body #restaurant h2 {
+  padding-left: 30px;
+}
+
+body #restaurant .menu {
+  position: relative;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 5px 0 black;
+          box-shadow: 0 0 5px 0 black;
+  width: 335px;
+  height: 250px;
+  margin: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body #restaurant .new {
+  position: absolute;
+  color: #2f805a;
+  background-color: #8febc0;
+  padding: 8px 13px;
+  top: 15px;
+  right: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+body #restaurant h3 {
+  margin: 15px 0 0 15px;
+  font-size: 18px;
+}
+
+body #restaurant p {
+  margin: 5px 0 0 15px;
+  font-size: 18px;
+}
+
+body #restaurant a {
   color: black;
-  font-family: "roboto";
+}
+
+body #restaurant .heart {
+  position: absolute;
+  font-size: 30px;
+  right: 30px;
+  bottom: 30px;
+}
+
+body #restaurant .pic {
+  height: 175px;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 20px 20px 0 0;
+}
+
+body #restaurant .text {
+  padding: 0;
+  margin: 0;
+}
+
+body #restaurant .img1 {
+  background-image: url("../images/restaurants/restaurant1.jpg");
+}
+
+body #restaurant .img2 {
+  background-image: url("../images/restaurants/restaurant2.jpg");
+  background-position: 40% 60%;
+}
+
+body #restaurant .img3 {
+  background-image: url("../images/restaurants/restaurant3.jpg");
+}
+
+body #restaurant .img4 {
+  background-image: url("../images/restaurants/restaurant4.jpg");
+}
+
+body footer {
+  background-color: #362f2f;
+  color: white;
+  font-size: 15px;
+  padding: 20px;
+}
+
+body footer a {
+  color: white;
+}
+
+body footer img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  height: 17px;
+  padding-bottom: 10px;
+}
+
+body footer .foot {
+  margin: 6px;
+}
+
+@media all and (min-width: 700px) {
+  #restaurant h2 {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

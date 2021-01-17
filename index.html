@@ -12,57 +12,79 @@
 
 <body>
     <header>
-        <img src="images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood!" />
-        <div>
+        <div><img src="images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood!" />
+        </div>
+        <div id="location">
             <i class="fas fa-map-marker-alt"></i>
             Paris, Belleville
         </div>
-        <h1> Réserver le menu qui vous convient</h1>
-        <p> Découvrez des restaurant d'exception, selectionnés par nos soins.</p>
-        <div> Explorer nos restaurants </div>
+        <div id="reservation">
+            <h1> Réserver le menu qui vous convient</h1>
+            <p> Découvrez des restaurant d'exception, selectionnés par nos soins.</p>
+            <div id="explore"> Explorer nos restaurants </div>
+        </div>
     </header>
     <section id="fonction">
         <h2> Fonctionnement</h2>
-
+        <div class="choices">
+            <span class="numbers"> 1</span>
+            <i class="fas fa-mobile-alt icon"></i> Choisissez un restaurant
+        </div>
+        <div class="choices">
+            <span class="numbers"> 2</span>
+            <i class="fas fa-list icon"></i> Composez votre menu
+        </div>
+        <div class="choices">
+            <span class="numbers"> 3</span>
+            <i class="fas fa-store icon"></i> Dégustez au restaurant
+        </div>
     </section>
     <section id="restaurant">
         <h2> Restaurants</h2>
         <div class="menu">
             <a href="#">
                 <div class="pic img1"> </div>
+                <div class="new"> Nouveau</div>
                 <h3> La palette du goût</h3>
                 <p> Ménilmontant</p>
             </a>
+            <i class="far fa-heart heart"></i>
         </div>
         <div class="menu">
             <a href="#">
                 <div class="pic img2"> </div>
+                <div class="new"> Nouveau</div>
                 <h3> La note enchantée</h3>
                 <p> Charonne</p>
             </a>
+            <i class="far fa-heart heart"></i>
         </div>
         <div class="menu">
             <a href="#">
                 <div class="pic img3"> </div>
-                <h3> A la française</h3>
-                <p> cité rouge</p>
+                <div class="new"> Nouveau</div>
+                <h3> À la française</h3>
+                <p> Cité rouge</p>
             </a>
+            <i class="far fa-heart heart"></i>
         </div>
         <div class="menu">
             <a href="#">
                 <div class="pic img4"> </div>
+                <div class="new"> Nouveau</div>
                 <h3> Le délice des sens</h3>
                 <p> Folie-Mélicourt </p>
             </a>
+            <i class="far fa-heart heart"></i>
         </div>
     </section>
     <footer>
         <img src="images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood!" />
         <div>
-            <div> <i class="fas fa-utensils"></i> Proposer un restaurant </div>
-            <div> <i class="fas fa-hands-helping"></i> Devenir partenaire </div>
-            <span>Mention légales </span>
-            <div> <a href="mailto:#"> Contact </a> </div>
+            <div class="foot"> <i class="fas fa-utensils "></i> Proposer un restaurant </div>
+            <div class="foot"> <i class="fas fa-hands-helping"></i> Devenir partenaire </div>
+            <div class="foot">Mention légales </div>
+            <div class="foot"> <a href="mailto:#"> Contact </a> </div>
         </div>
     </footer>
 </body>

@@ -1,6 +1,10 @@
 $primary-color :#9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$bicolor: linear-gradient($secondary-color, $primary-color);
+$color-text-white: white;
+$bckd-new: #8febc0;
+$text-new: #2f805a;
 
 @font-face 
 {
@@ -13,7 +17,209 @@ $tertiary-color: #99E2D0;
 *
 {
     text-decoration: none;
-    color: black;
-    font-family: "roboto";
+    font-family: "roboto", Arial, Helvetica, sans-serif;
 }
+body
+{
+    padding: 0;
+    margin: 0;
+    header
+    {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        img
+        {
+            height: 30px;
+            padding: 20px 0 5px 0;
+        }
+        #location
+        {
+            background-color:#eaeae1;
+            padding: 15px;
+        }
+        #reservation
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5ef;
+            padding: 30px 5px 50px 5px;
+            font-size: 17px;
+        }
+        h1 
+        {
+        font-size: 24px;
+        }
+        #explore
+        {
 
+            padding: 17px;
+            width: 200px;
+            background: $bicolor;
+            border-radius: 30px;
+            color: $color-text-white;
+            box-shadow: 0 0 5px 0 gray;
+        }
+    }
+#fonction
+{
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2
+    {
+        padding: 20px 0 10px 20px;
+    }
+    .choices
+    {
+        position: relative;
+        padding: 25px;
+        margin: 15px;
+        width: 280px;
+        background-color: #f5f5ef;
+        border-radius: 20px;
+        box-shadow: 1px 1px 5px 4px #eaeae1;
+    }
+    .icon
+    {
+        color:gray;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+    .numbers
+    {
+        position: absolute;
+        left:-20px;
+        bottom: 15px;
+        background-color: $primary-color;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        margin:5px;
+        color:$color-text-white;
+    }
+    
+}
+    
+#restaurant
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        background-color: #f5f5ef;
+        padding: 20px 0 50px 0;
+    h2
+    {
+        padding-left: 30px;
+    }
+    .menu
+    {
+        position: relative;
+        border-radius: 20px;
+        box-shadow: 0 0 5px 0 black;
+        width: 335px;
+        height: 250px;
+        margin: 10px;
+        align-self: center;
+    }
+    .new
+    {
+        position: absolute;
+        color: $text-new;
+        background-color: $bckd-new;
+        padding: 8px 13px;
+        top: 15px;
+        right: 10px;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+    h3
+    {
+        margin: 15px 0 0 15px;
+        font-size: 18px;
+    }
+    p 
+    {
+        margin: 5px 0 0 15px;
+        font-size: 18px;
+    }
+    a
+    {
+        color: black;
+    }
+    .heart
+    {
+    position: absolute;
+    font-size: 30px;
+    right: 30px;
+    bottom: 30px;
+   
+    }
+    .pic
+    {
+    height: 175px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;  
+    border-radius: 20px 20px 0 0;
+    }
+    .text
+    {
+        padding: 0;
+        margin: 0;
+    }
+    .img1
+    {
+    background-image: url("../images/restaurants/restaurant1.jpg");
+    }
+    .img2
+    {
+    background-image: url("../images/restaurants/restaurant2.jpg");
+    background-position: 40% 60%;
+    }
+    .img3
+    {
+    background-image: url("../images/restaurants/restaurant3.jpg");
+    }
+    .img4
+    {
+    background-image: url("../images/restaurants/restaurant4.jpg");
+    }
+}
+footer
+{
+    background-color: rgb(54, 47, 47);
+     color:$color-text-white;
+     font-size: 15px;
+     padding: 20px;
+    a
+    {
+        color: $color-text-white;
+    }
+    img
+    {
+        filter: invert(100%);
+        height: 17px;
+        padding-bottom: 10px;
+    }
+    .foot
+    {
+        margin: 6px;
+    }
+}
+}
+@media all and (min-width: 700px)
+{
+    #restaurant
+    {
+        h2
+        {
+            align-self: center;
+        }
+    }
+}
