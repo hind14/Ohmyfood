@@ -2,22 +2,27 @@ $primary-color :#9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $bicolor: linear-gradient($secondary-color, $primary-color);
+$reverse-bicolor:  linear-gradient($primary-color, $secondary-color);
 $color-text-white: white;
 $bckd-new: #8febc0;
 $text-new: #2f805a;
+$background-color: #f5f5ef;
 
 @font-face 
 {
-    font-family: "roboto";
-    src: url(Roboto/Roboto-Regular.ttf) format("truetype");
-    font-family: "shrikhand";
-    src: url(Shrikhand/Shrikhand-Regular.ttf) format("truetype");
+    font-family: 'roboto';
+    src: url('../roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'shrikhand';
+    src: url('../Shrikhand/Shrikhand-Regular.ttf') format('truetype');
 }
 
 *
 {
     text-decoration: none;
-    font-family: "roboto", Arial, Helvetica, sans-serif;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
 }
 body
 {
@@ -43,7 +48,7 @@ body
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f5f5ef;
+            background-color: $background-color;
             padding: 30px 5px 50px 5px;
             font-size: 17px;
         }
@@ -78,7 +83,7 @@ body
         padding: 25px;
         margin: 15px;
         width: 280px;
-        background-color: #f5f5ef;
+        background-color: $background-color;
         border-radius: 20px;
         box-shadow: 1px 1px 5px 4px #eaeae1;
     }
@@ -111,7 +116,7 @@ body
         display: flex;
         flex-direction: column;
         justify-content: center;  
-        background-color: #f5f5ef;
+        background-color: $background-color;
         padding: 20px 0 50px 0;
     h2
     {
@@ -126,6 +131,44 @@ body
         height: 250px;
         margin: 10px;
         align-self: center;
+        background-color: white;
+        .coeur
+        {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 30px;
+        bottom: 35px;
+        transform: rotate(45deg);
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        box-sizing: border-box;
+        background-color: none;
+        } 
+        .coeur::before, .coeur::after 
+        {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border-top: 1px solid;
+            border-left: 1px solid;
+        }
+        .coeur::before
+        {
+        bottom: -1px;
+        right: 5px;
+        transform: rotate(-36deg);
+    } 
+    .coeur::after
+        {
+        bottom: 5px;
+        right: -1px;
+        background-color: white;
+        transform: rotate(50deg);
+    } 
     }
     .new
     {
@@ -158,7 +201,6 @@ body
     font-size: 30px;
     right: 30px;
     bottom: 30px;
-   
     }
     .pic
     {

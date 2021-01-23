@@ -1,13 +1,16 @@
 @font-face {
-  font-family: "roboto";
-  src: url(Roboto/Roboto-Regular.ttf) format("truetype");
-  font-family: "shrikhand";
-  src: url(Shrikhand/Shrikhand-Regular.ttf) format("truetype");
+  font-family: 'roboto';
+  src: url("../roboto_regular_macroman/Roboto-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'shrikhand';
+  src: url("../Shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
 * {
   text-decoration: none;
-  font-family: "roboto", Arial, Helvetica, sans-serif;
+  font-family: 'roboto', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -147,6 +150,49 @@ body #restaurant .menu {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  background-color: white;
+}
+
+body #restaurant .menu .coeur {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 30px;
+  bottom: 35px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: none;
+}
+
+body #restaurant .menu .coeur::before, body #restaurant .menu .coeur::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+body #restaurant .menu .coeur::before {
+  bottom: -1px;
+  right: 5px;
+  -webkit-transform: rotate(-36deg);
+          transform: rotate(-36deg);
+}
+
+body #restaurant .menu .coeur::after {
+  bottom: 5px;
+  right: -1px;
+  background-color: white;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
 }
 
 body #restaurant .new {
@@ -240,4 +286,4 @@ body footer .foot {
         align-self: center;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
