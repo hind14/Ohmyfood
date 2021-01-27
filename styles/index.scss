@@ -19,6 +19,38 @@ $background-color: #f5f5ef;
     src: url('../Shrikhand/Shrikhand-Regular.ttf') format('truetype');
 }
 
+@keyframes main {
+    0% {
+        opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+}
+
+@keyframes load {
+    0%{
+        transform: rotate(0deg);
+        visibility: visible;
+    }
+    100% {
+        transform: rotate(360deg);
+        visibility: hidden;
+    }
+
+}
+
+@keyframes apparition {
+    0% {
+        opacity: (0);
+        transform: scale(0)
+    }
+    100% {
+        opacity:(1);
+        transform: scale(1);
+    }
+}
+
 *
 {
     text-decoration: none;
@@ -28,6 +60,20 @@ body
 {
     padding: 0;
     margin: 0;
+    .spinner
+    {
+    animation: load 2s both linear;
+    font-size: 50px;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    left: 50%;
+    } 
+    #delay
+    {
+        animation: main 1s 2s both;
+    }
     header
     {
         display: flex;
@@ -58,7 +104,6 @@ body
         }
         #explore
         {
-
             padding: 17px;
             width: 200px;
             background: $bicolor;
@@ -85,13 +130,17 @@ body
         width: 280px;
         background-color: $background-color;
         border-radius: 20px;
-        box-shadow: 1px 1px 5px 4px #eaeae1;
+        box-shadow: 0px 0px 6px 2px #eaeae1;
     }
     .icon
     {
         color:gray;
         margin: 0 10px;
         font-size: 20px;
+    }
+    .miam
+    {
+        color: $primary-color;
     }
     .numbers
     {
@@ -132,43 +181,39 @@ body
         margin: 10px;
         align-self: center;
         background-color: white;
-        .coeur
-        {
+    }
+    .coeur
+    {
         position: absolute;
-        width: 12px;
-        height: 12px;
-        right: 30px;
-        bottom: 35px;
-        transform: rotate(45deg);
-        border-bottom: 1px solid;
-        border-right: 1px solid;
-        box-sizing: border-box;
-        background-color: none;
-        } 
-        .coeur::before, .coeur::after 
+        right: 50px;
+        bottom: 50px;
+        cursor: pointer;
+    }
+        .check
+    {
+        position: absolute;
+        width: 100%;
+    }
+    .check:checked
         {
-            position: absolute;
-            content: '';
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            box-sizing: border-box;
-            border-top: 1px solid;
-            border-left: 1px solid;
+        animation: apparition 0.4s both linear; 
         }
-        .coeur::before
-        {
-        bottom: -1px;
-        right: 5px;
-        transform: rotate(-36deg);
-    } 
-    .coeur::after
-        {
-        bottom: 5px;
-        right: -1px;
+    .empty-heart
+    {
         background-color: white;
-        transform: rotate(50deg);
-    } 
+        position: absolute;
+        font-size: 20px;
+    }
+    .full-heart
+    {
+    background: $reverse-bicolor;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    font-size: 20px; 
+    opacity: (0);   
+    &:hover
+    {animation: apparition 0.3s both linear; } 
     }
     .new
     {
@@ -194,13 +239,6 @@ body
     a
     {
         color: black;
-    }
-    .heart
-    {
-    position: absolute;
-    font-size: 30px;
-    right: 30px;
-    bottom: 30px;
     }
     .pic
     {
@@ -255,7 +293,7 @@ footer
     }
 }
 }
-@media all and (min-width: 700px)
+@media all and (min-width: 1120px)
 {
     #restaurant
     {

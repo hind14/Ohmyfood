@@ -8,6 +8,76 @@
   src: url("../Shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
+@-webkit-keyframes main {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes main {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: hidden;
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 * {
   text-decoration: none;
   font-family: 'roboto', Arial, Helvetica, sans-serif;
@@ -16,6 +86,23 @@
 body {
   padding: 0;
   margin: 0;
+}
+
+body .spinner {
+  -webkit-animation: load 2s both linear;
+          animation: load 2s both linear;
+  font-size: 50px;
+  color: grey;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  left: 50%;
+}
+
+body #delay {
+  -webkit-animation: main 1s 2s both;
+          animation: main 1s 2s both;
 }
 
 body header {
@@ -95,14 +182,18 @@ body #fonction .choices {
   width: 280px;
   background-color: #f5f5ef;
   border-radius: 20px;
-  -webkit-box-shadow: 1px 1px 5px 4px #eaeae1;
-          box-shadow: 1px 1px 5px 4px #eaeae1;
+  -webkit-box-shadow: 0px 0px 6px 2px #eaeae1;
+          box-shadow: 0px 0px 6px 2px #eaeae1;
 }
 
 body #fonction .icon {
   color: gray;
   margin: 0 10px;
   font-size: 20px;
+}
+
+body #fonction .miam {
+  color: #9356DC;
 }
 
 body #fonction .numbers {
@@ -153,46 +244,42 @@ body #restaurant .menu {
   background-color: white;
 }
 
-body #restaurant .menu .coeur {
+body #restaurant .coeur {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  right: 30px;
-  bottom: 35px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: none;
+  right: 50px;
+  bottom: 50px;
+  cursor: pointer;
 }
 
-body #restaurant .menu .coeur::before, body #restaurant .menu .coeur::after {
+body #restaurant .check {
   position: absolute;
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-top: 1px solid;
-  border-left: 1px solid;
+  width: 100%;
 }
 
-body #restaurant .menu .coeur::before {
-  bottom: -1px;
-  right: 5px;
-  -webkit-transform: rotate(-36deg);
-          transform: rotate(-36deg);
+body #restaurant .check:checked {
+  -webkit-animation: apparition 0.4s both linear;
+          animation: apparition 0.4s both linear;
 }
 
-body #restaurant .menu .coeur::after {
-  bottom: 5px;
-  right: -1px;
+body #restaurant .empty-heart {
   background-color: white;
-  -webkit-transform: rotate(50deg);
-          transform: rotate(50deg);
+  position: absolute;
+  font-size: 20px;
+}
+
+body #restaurant .full-heart {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  font-size: 20px;
+  opacity: 0;
+}
+
+body #restaurant .full-heart:hover {
+  -webkit-animation: apparition 0.3s both linear;
+          animation: apparition 0.3s both linear;
 }
 
 body #restaurant .new {
@@ -218,13 +305,6 @@ body #restaurant p {
 
 body #restaurant a {
   color: black;
-}
-
-body #restaurant .heart {
-  position: absolute;
-  font-size: 30px;
-  right: 30px;
-  bottom: 30px;
 }
 
 body #restaurant .pic {
@@ -279,7 +359,7 @@ body footer .foot {
   margin: 6px;
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 1120px) {
   #restaurant h2 {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
