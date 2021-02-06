@@ -1,0 +1,9 @@
+@import "menus"; 
+    
+body
+{
+    #picture {   
+    background-image: url("../../images/restaurants/restaurant2.jpg");
+    }
+    .menu:nth-child(5) {animation: presentation-menu-delay 0.5s 1.4s linear both;}
+}

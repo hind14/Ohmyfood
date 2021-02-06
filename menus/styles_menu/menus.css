@@ -8,6 +8,54 @@
   src: url("../../Shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
+@-webkit-keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes presentation-menu-delay {
+  0% {
+    opacity: 0;
+    margin-top: -30px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@keyframes presentation-menu-delay {
+  0% {
+    opacity: 0;
+    margin-top: -30px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
 * {
   text-decoration: none;
   font-family: 'roboto', Arial, Helvetica, sans-serif;
@@ -35,6 +83,7 @@ body header img {
 body header .narrow {
   padding: 0 80px 0 20px;
   font-size: 20px;
+  color: black;
 }
 
 body #picture {
@@ -55,15 +104,47 @@ body section {
 }
 
 body section h2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   font-family: 'shrikhand', Arial, Helvetica, sans-serif;
-  padding-left: 20px;
-  font-size: 25px;
+  font-size: 27px;
   position: relative;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  padding-left: 20px;
+}
+
+body section h2 .coeur {
+  right: 55px;
+  bottom: 35px;
+  position: absolute;
+  cursor: pointer;
+}
+
+body section h2 #heart-checkbox {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+body section h2 input:checked + label .full-heart {
+  -webkit-animation: apparition 0.3s both linear;
+          animation: apparition 0.3s both linear;
+}
+
+body section h2 .empty-heart {
+  background-color: #f5f5ef;
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+body section h2 .full-heart {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  font-size: 25px;
+  opacity: 0;
+  cursor: pointer;
 }
 
 body section .table {
@@ -79,42 +160,131 @@ body section .table {
           align-items: center;
 }
 
+body section .menu:nth-child(2) {
+  -webkit-animation: presentation-menu-delay 0.5s 0.8s linear both;
+          animation: presentation-menu-delay 0.5s 0.8s linear both;
+}
+
+body section .menu:nth-child(3) {
+  -webkit-animation: presentation-menu-delay 0.5s 1s linear both;
+          animation: presentation-menu-delay 0.5s 1s linear both;
+}
+
+body section .menu:nth-child(4) {
+  -webkit-animation: presentation-menu-delay 0.5s 1.2s linear both;
+          animation: presentation-menu-delay 0.5s 1.2s linear both;
+}
+
+body section h3 {
+  font-weight: lighter;
+  border-bottom: #99E2D0 3px solid;
+  width: 50px;
+  padding-bottom: 5px;
+}
+
 body section .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin-top: 0px;
   background-color: white;
-  width: 350px;
-  border-radius: 15px;
-  height: 70px;
-  -webkit-box-shadow: 0 0 5px 0 gray;
-          box-shadow: 0 0 5px 0 gray;
-  margin: 15px 0;
+  width: 335px;
+  border-radius: 14px;
+  height: 65px;
+  -webkit-box-shadow: 0 0 5px 0 #f5f5ef;
+          box-shadow: 0 0 5px 0 #f5f5ef;
+  margin-bottom: 15px;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+body section .menu .inside-box-menu {
+  width: 100%;
+  padding: 10px;
+}
+
+body section .menu input[name=menu-checkbox] {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+body section .menu input:checked + label .check-circle-box {
+  right: 0;
+}
+
+body section .menu input:checked + label .check-circle-box .menu-checking {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+body section .menu input:checked + label .price {
+  right: 60px;
+}
+
+body section .menu input:checked + label p {
+  width: 66%;
 }
 
 body section .menu p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  padding: 5px 20px 0 10px;
+  margin: 0px;
   font-size: 15px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: width 0.5s linear;
+  transition: width 0.5s linear;
+  padding-right: 3px;
+  cursor: pointer;
 }
 
 body section .menu .price {
   font-weight: bold;
-  text-overflow: ellipsis;
+  position: absolute;
+  font-size: 15px;
+  right: 10px;
+  bottom: 10px;
+  padding-right: 10px;
+  padding-left: 3px;
+  -webkit-transition: right 0.5s linear;
+  transition: right 0.5s linear;
+  cursor: pointer;
+}
+
+body section .menu .check-circle-box {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: -60px;
+  width: 60px;
+  color: white;
+  background-color: #99E2D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0 14px 14px 0;
+  -webkit-transition: right 0.5s linear;
+  transition: right 0.5s linear;
+  cursor: pointer;
+}
+
+body section .menu .check-circle-box .menu-checking {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: -webkit-transform 0.4s 0.1s;
+  transition: -webkit-transform 0.4s 0.1s;
+  transition: transform 0.4s 0.1s;
+  transition: transform 0.4s 0.1s, -webkit-transform 0.4s 0.1s;
+  cursor: pointer;
 }
 
 body section .menu .bold {
@@ -133,6 +303,7 @@ body section #order {
           box-shadow: 0 0 5px 0 gray;
   text-align: center;
   margin: 40px 0 50px 0;
+  cursor: pointer;
 }
 
 body footer {
@@ -155,5 +326,31 @@ body footer img {
 
 body footer .foot {
   margin: 6px;
+}
+
+@media all and (min-width: 750px) {
+  h2 {
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1120px) {
+  section h2 input:hover + label .full-heart {
+    -webkit-animation: apparition 0.3s both linear;
+            animation: apparition 0.3s both linear;
+  }
+  section input:hover + label .check-circle-box {
+    right: 0;
+  }
+  section input:hover + label .check-circle-box .menu-checking {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  section input:hover + label .price {
+    right: 60px;
+  }
+  section input:hover + label p {
+    width: 66%;
+  }
 }
 /*# sourceMappingURL=menus.css.map */

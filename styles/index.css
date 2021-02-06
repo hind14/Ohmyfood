@@ -166,13 +166,14 @@ body #fonction {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 15px;
 }
 
 body #fonction h2 {
-  padding: 20px 0 10px 20px;
+  padding-left: 10px;
 }
 
 body #fonction .choices {
@@ -184,6 +185,7 @@ body #fonction .choices {
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 6px 2px #eaeae1;
           box-shadow: 0px 0px 6px 2px #eaeae1;
+  font-weight: bold;
 }
 
 body #fonction .icon {
@@ -227,7 +229,7 @@ body #restaurant {
 }
 
 body #restaurant h2 {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 body #restaurant .menu {
@@ -238,48 +240,48 @@ body #restaurant .menu {
   width: 335px;
   height: 250px;
   margin: 10px;
+  padding-bottom: 5px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   background-color: white;
-}
-
-body #restaurant .coeur {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
   cursor: pointer;
 }
 
-body #restaurant .check {
+body #restaurant .menu .coeur {
+  right: 50px;
+  bottom: 50px;
   position: absolute;
-  width: 100%;
 }
 
-body #restaurant .check:checked {
-  -webkit-animation: apparition 0.4s both linear;
-          animation: apparition 0.4s both linear;
+body #restaurant .menu input[name=heart-checkbox] {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
 }
 
-body #restaurant .empty-heart {
+body #restaurant .menu input:checked + label .full-heart {
+  -webkit-animation: apparition 0.3s both linear;
+          animation: apparition 0.3s both linear;
+}
+
+body #restaurant .menu .empty-heart {
   background-color: white;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-body #restaurant .full-heart {
+body #restaurant .menu .full-heart {
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   opacity: 0;
-}
-
-body #restaurant .full-heart:hover {
-  -webkit-animation: apparition 0.3s both linear;
-          animation: apparition 0.3s both linear;
+  cursor: pointer;
 }
 
 body #restaurant .new {
@@ -360,10 +362,19 @@ body footer .foot {
 }
 
 @media all and (min-width: 1120px) {
-  #restaurant h2 {
+  #fonction {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  h2 {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+  #restaurant input:hover + label .full-heart {
+    -webkit-animation: apparition 0.3s both linear;
+            animation: apparition 0.3s both linear;
   }
 }
 /*# sourceMappingURL=index.css.map */

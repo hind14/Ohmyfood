@@ -2,6 +2,8 @@ $primary-color :#9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $bicolor: linear-gradient($secondary-color, $primary-color);
+$reverse-bicolor:  linear-gradient($primary-color, $secondary-color);
+$reverse-bicolor:  linear-gradient($primary-color, $secondary-color);
 $color-text-white: white;
 $background-color: #f5f5ef;
 
@@ -13,6 +15,28 @@ $background-color: #f5f5ef;
 @font-face {
     font-family: 'shrikhand';
     src: url('../../Shrikhand/Shrikhand-Regular.ttf') format('truetype');
+}
+
+@keyframes apparition {
+    0% {
+        opacity: (0);
+        transform: scale(0)
+    }
+    100% {
+        opacity:(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes presentation-menu-delay {
+    0% {
+        opacity: (0);
+        margin-top: -30px;
+    }
+    100% {
+        opacity: (1);
+        margin-top: 0px;
+    }
 }
 
 *
@@ -38,6 +62,7 @@ body
         {
             padding: 0 80px 0 20px;
             font-size: 20px;
+            color: black;
         }
     }
     #picture
@@ -57,50 +82,158 @@ body
         margin-top: -45px;
         h2
         {
-            display: flex;
             font-family: 'shrikhand', Arial, Helvetica, sans-serif;
-            padding-left: 20px;
-            font-size: 25px;
+            font-size: 27px;
             position: relative;
-            justify-content: space-around;
-    }
+            padding-left: 20px;
+            .coeur
+            {
+                right: 55px;
+                bottom: 35px;
+                position: absolute;
+                cursor: pointer;
+            }
+            #heart-checkbox
+            {
+                position: absolute;
+                cursor: pointer;
+                z-index: 2;
+                opacity: (0);
+            }
+            input:checked + label
+            {
+                .full-heart {
+                animation: apparition 0.3s both linear;
+                }
+            }
+            .empty-heart
+            {
+                background-color: $background-color;
+                position: absolute;
+                font-size: 25px;
+                cursor: pointer;
+            }
+            .full-heart
+            {
+                background: $reverse-bicolor;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                font-size: 25px; 
+                opacity: (0);
+                cursor: pointer;
+            }
+        }
         .table
         {
         display: flex;
         flex-direction: column;
         align-items: center; 
         }
+        .menu:nth-child(2) {animation: presentation-menu-delay 0.5s 0.8s linear both;}
+        .menu:nth-child(3) {animation: presentation-menu-delay 0.5s 1s linear both;}
+        .menu:nth-child(4) {animation: presentation-menu-delay 0.5s 1.2s linear both;
+    }
+        h3
+        {
+            font-weight: lighter;
+            border-bottom: $tertiary-color 3px solid;
+            width: 50px;
+            padding-bottom: 5px;
+
+        }
         .menu
         {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        margin-top: 0px;
         background-color: white;
-        width: 350px;
-        border-radius: 15px;
-        height: 70px;
-        box-shadow: 0 0 5px 0 gray;
-        margin : 15px 0;
+        width: 335px;
+        border-radius: 14px;
+        height: 65px;
+        box-shadow: 0 0 5px 0 $background-color;
+        margin-bottom : 15px;
         position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        .inside-box-menu
+        {
+            width: 100%;
+            padding: 10px;
+        }
+        input[name=menu-checkbox]
+        {
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            z-index: 2;
+            opacity: (0);
+            cursor: pointer;
+        }
+        input:checked + label
+        {
+            .check-circle-box {
+                right: 0; 
+            .menu-checking {
+                transform: rotate(360deg);}
+            }
+            .price {
+                right: 60px;
+            }
+            p {
+                width: 66%;
+            }
+        }
         p
         {
-            display: flex;
-            margin: 0;
-            padding: 5px 20px 0 10px;
+            margin: 0px;
             font-size: 15px;
-            justify-content: space-between;
+            width: 80%;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis;
+            transition: width 0.5s linear;
+            padding-right: 3px;
+            cursor: pointer;
         }
         .price
         {
             font-weight: bold; 
-            text-overflow: ellipsis;
+            position: absolute;
+            font-size: 15px;
+            right: 10px;
+            bottom: 10px;
+            padding-right: 10px;
+            padding-left: 3px;
+            transition: right 0.5s linear;
+            cursor: pointer;
+        }
+        .check-circle-box
+        {
+            position: absolute;
+            height: 100%;
+            top:0;
+            bottom: 0;
+            right: -60px;
+            width: 60px;
+            color: white;
+            background-color: $tertiary-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 14px 14px 0;
+            transition: right 0.5s linear;
+            cursor: pointer;
+            .menu-checking {
+                transform: rotate(0);
+                transition: transform 0.4s 0.1s; 
+                cursor: pointer;
+            }         
         }
         .bold
         {
             font-weight: bold;
             font-size: 18px;
         }
-    }
+        }
         #order
         {
         padding: 15px;
@@ -111,6 +244,7 @@ body
         box-shadow: 0 0 5px 0 gray;
         text-align: center;
         margin: 40px 0 50px 0;
+        cursor:pointer;
         }
     }
     footer
@@ -132,6 +266,44 @@ body
         .foot
         {
             margin: 6px;
+        }
+    }
+}
+
+@media all and (min-width:750px)
+{
+    h2
+    {
+        text-align: center;
+    }
+}
+
+@media all and (min-width: 1120px)
+{
+    section
+    {
+        h2
+        {
+            input:hover + label
+            {
+                .full-heart {
+                animation: apparition 0.3s both linear;
+                }
+            }
+        }
+        input:hover + label
+        { 
+            .check-circle-box {
+                right: 0; 
+            .menu-checking {
+                transform: rotate(360deg);}
+            }
+            .price {
+                right: 60px;
+            }
+            p {
+                width: 66%;
+            } 
         }
     }
 }

@@ -355,6 +355,11 @@ body footer .foot {
 }
 
 body #picture {
-  background-image: url("../../images/restaurants/restaurant1.jpg");
+  background-image: url("../../images/restaurants/restaurant2.jpg");
 }
-/*# sourceMappingURL=menu1.css.map */
+
+body .menu:nth-child(5) {
+  -webkit-animation: presentation-menu-delay 0.5s 1.4s linear both;
+          animation: presentation-menu-delay 0.5s 1.4s linear both;
+}
+/*# sourceMappingURL=menu2.css.map */

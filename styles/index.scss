@@ -1,4 +1,4 @@
-$primary-color :#9356DC;
+$primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $bicolor: linear-gradient($secondary-color, $primary-color);
@@ -117,11 +117,12 @@ body
     margin-bottom: 70px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
     h2
-    {
-        padding: 20px 0 10px 20px;
-    }
+        {
+            padding-left: 10px;
+        }
     .choices
     {
         position: relative;
@@ -131,6 +132,7 @@ body
         background-color: $background-color;
         border-radius: 20px;
         box-shadow: 0px 0px 6px 2px #eaeae1;
+        font-weight: bold;
     }
     .icon
     {
@@ -164,13 +166,13 @@ body
     {
         display: flex;
         flex-direction: column;
-        justify-content: center;  
+        justify-content: center; 
         background-color: $background-color;
         padding: 20px 0 50px 0;
-    h2
-    {
-        padding-left: 30px;
-    }
+        h2
+        {
+            padding-left: 20px;
+        }
     .menu
     {
         position: relative;
@@ -179,41 +181,47 @@ body
         width: 335px;
         height: 250px;
         margin: 10px;
+        padding-bottom: 5px;
         align-self: center;
         background-color: white;
-    }
+        cursor: pointer;
     .coeur
     {
-        position: absolute;
         right: 50px;
-        bottom: 50px;
-        cursor: pointer;
+        bottom: 50px; 
+        position: absolute;
     }
-        .check
+    input[name=heart-checkbox]
     {
         position: absolute;
-        width: 100%;
+        z-index: 2;
+         opacity: (0);
+         cursor: pointer;
     }
-    .check:checked
-        {
-        animation: apparition 0.4s both linear; 
+    input:checked + label
+    {
+        .full-heart {
+        animation: apparition 0.3s both linear;
         }
+    }
     .empty-heart
     {
         background-color: white;
         position: absolute;
-        font-size: 20px;
+        font-size: 25px;
+        cursor: pointer;
+
     }
     .full-heart
     {
-    background: $reverse-bicolor;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: absolute;
-    font-size: 20px; 
-    opacity: (0);   
-    &:hover
-    {animation: apparition 0.3s both linear; } 
+        background: $reverse-bicolor;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        font-size: 25px; 
+        opacity: (0);  
+        cursor: pointer;
+    }
     }
     .new
     {
@@ -295,11 +303,21 @@ footer
 }
 @media all and (min-width: 1120px)
 {
+    #fonction
+    {
+        align-items: center;
+    }
+    h2
+    {
+        align-self: center;
+    }
     #restaurant
     {
-        h2
-        {
-            align-self: center;
-        }
+        input:hover + label
+            {
+                .full-heart {
+                animation: apparition 0.3s both linear;
+                }
+            }
     }
 }
