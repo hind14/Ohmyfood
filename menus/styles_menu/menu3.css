@@ -16,8 +16,8 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -29,8 +29,8 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -105,7 +105,7 @@ body section {
 
 body section h2 {
   font-family: 'shrikhand', Arial, Helvetica, sans-serif;
-  font-size: 27px;
+  font-size: 26px;
   position: relative;
   padding-left: 20px;
 }
@@ -188,8 +188,8 @@ body section .menu {
   width: 335px;
   border-radius: 14px;
   height: 65px;
-  -webkit-box-shadow: 0 0 5px 0 #f5f5ef;
-          box-shadow: 0 0 5px 0 #f5f5ef;
+  -webkit-box-shadow: 0px 0px 7px 2px #eaeae1;
+          box-shadow: 0px 0px 7px 2px #eaeae1;
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
@@ -210,20 +210,20 @@ body section .menu input[name=menu-checkbox] {
   cursor: pointer;
 }
 
-body section .menu input:checked + label .check-circle-box {
+body section .menu input:checked + .menu-checkbox .check-circle-box {
   right: 0;
 }
 
-body section .menu input:checked + label .check-circle-box .menu-checking {
+body section .menu input:checked + .menu-checkbox .check-circle-box .menu-checking {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
-body section .menu input:checked + label .price {
+body section .menu input:checked + .menu-checkbox .price {
   right: 60px;
 }
 
-body section .menu input:checked + label p {
+body section .menu input:checked + .menu-checkbox p {
   width: 66%;
 }
 
@@ -306,6 +306,12 @@ body section #order {
   cursor: pointer;
 }
 
+body section #order:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0px 0px 5px 2px gray;
+          box-shadow: 0px 0px 5px 2px gray;
+}
+
 body footer {
   background-color: #362f2f;
   color: white;
@@ -328,8 +334,18 @@ body footer .foot {
   margin: 6px;
 }
 
+@media all and (max-width: 340px) {
+  section .table .menu {
+    width: 300px;
+  }
+}
+
 @media all and (min-width: 750px) {
-  h2 {
+  body #picture {
+    background-position: 50% 60%;
+    height: 300px;
+  }
+  body h2 {
     text-align: center;
   }
 }
@@ -339,17 +355,17 @@ body footer .foot {
     -webkit-animation: apparition 0.3s both linear;
             animation: apparition 0.3s both linear;
   }
-  section input:hover + label .check-circle-box {
+  section input:hover + .menu-checkbox .check-circle-box {
     right: 0;
   }
-  section input:hover + label .check-circle-box .menu-checking {
+  section input:hover + .menu-checkbox .check-circle-box .menu-checking {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-  section input:hover + label .price {
+  section input:hover + .menu-checkbox .price {
     right: 60px;
   }
-  section input:hover + label p {
+  section input:hover + .menu-checkbox p {
     width: 66%;
   }
 }

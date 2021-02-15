@@ -7,6 +7,7 @@ $color-text-white: white;
 $bckd-new: #8febc0;
 $text-new: #2f805a;
 $background-color: #f5f5ef;
+$box-shadow: #eaeae1;
 
 @font-face 
 {
@@ -47,7 +48,7 @@ $background-color: #f5f5ef;
     }
     100% {
         opacity:(1);
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 
@@ -110,6 +111,11 @@ body
             border-radius: 30px;
             color: $color-text-white;
             box-shadow: 0 0 5px 0 gray;
+            cursor: pointer;
+            &:hover {
+                opacity: (0.9);
+                box-shadow: 0px 0px 5px 2px gray;
+           }
         }
     }
 #fonction
@@ -119,6 +125,7 @@ body
     flex-direction: column;
     justify-content: center;
     padding-left: 15px;
+    cursor: pointer;
     h2
         {
             padding-left: 10px;
@@ -131,8 +138,12 @@ body
         width: 280px;
         background-color: $background-color;
         border-radius: 20px;
-        box-shadow: 0px 0px 6px 2px #eaeae1;
+        box-shadow: 0px 0px 6px 2px $box-shadow;
         font-weight: bold;
+        &:hover {
+            background-color: #F7F7F7;
+            box-shadow: 0px 0px 12px 4px $box-shadow;
+        }
     }
     .icon
     {
@@ -300,8 +311,24 @@ footer
         margin: 6px;
     }
 }
+
+@media all and (max-width: 360px)
+{
+    #fonction {
+            .choices {
+                 width: 240px;
+                 padding: 20px;
+            }
+        }
+    #restaurant {
+            .menu {
+                width: 280px;
+            }
+        }
 }
-@media all and (min-width: 1120px)
+
+}
+@media all and (min-width: 700px)
 {
     #fonction
     {
@@ -311,6 +338,10 @@ footer
     {
         align-self: center;
     }
+}
+
+@media all and (min-width:1120px)
+{
     #restaurant
     {
         input:hover + label

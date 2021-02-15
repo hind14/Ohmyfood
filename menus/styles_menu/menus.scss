@@ -24,7 +24,7 @@ $background-color: #f5f5ef;
     }
     100% {
         opacity:(1);
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 
@@ -83,7 +83,7 @@ body
         h2
         {
             font-family: 'shrikhand', Arial, Helvetica, sans-serif;
-            font-size: 27px;
+            font-size: 26px;
             position: relative;
             padding-left: 20px;
             .coeur
@@ -132,8 +132,7 @@ body
         }
         .menu:nth-child(2) {animation: presentation-menu-delay 0.5s 0.8s linear both;}
         .menu:nth-child(3) {animation: presentation-menu-delay 0.5s 1s linear both;}
-        .menu:nth-child(4) {animation: presentation-menu-delay 0.5s 1.2s linear both;
-    }
+        .menu:nth-child(4) {animation: presentation-menu-delay 0.5s 1.2s linear both;}
         h3
         {
             font-weight: lighter;
@@ -149,7 +148,7 @@ body
         width: 335px;
         border-radius: 14px;
         height: 65px;
-        box-shadow: 0 0 5px 0 $background-color;
+        box-shadow: 0px 0px 7px 2px #eaeae1;
         margin-bottom : 15px;
         position: relative;
         overflow: hidden;
@@ -168,7 +167,7 @@ body
             opacity: (0);
             cursor: pointer;
         }
-        input:checked + label
+        input:checked + .menu-checkbox
         {
             .check-circle-box {
                 right: 0; 
@@ -245,6 +244,10 @@ body
         text-align: center;
         margin: 40px 0 50px 0;
         cursor:pointer;
+        &:hover {
+            opacity: (0.9);
+            box-shadow: 0px 0px 5px 2px gray;
+       }
         }
     }
     footer
@@ -270,11 +273,27 @@ body
     }
 }
 
+@media all and (max-width:340px)
+{
+    section {
+        .table {
+            .menu {
+                 width: 300px;
+            }
+        }
+    }
+}
+
 @media all and (min-width:750px)
 {
-    h2
-    {
-        text-align: center;
+    body {
+        #picture {
+            background-position: 50% 60%;
+            height: 300px;
+        }
+        h2 {   
+            text-align: center;
+        }
     }
 }
 
@@ -291,7 +310,7 @@ body
                 }
             }
         }
-        input:hover + label
+        input:hover + .menu-checkbox
         { 
             .check-circle-box {
                 right: 0; 
